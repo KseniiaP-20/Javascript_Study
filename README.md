@@ -1,2 +1,4 @@
 # Javascript_Study
-Short Tasks Carried While Studying JavaScript (in Russian)
+
+Short tasks I have carried out while studying JavaScript at Synergy IT Academy.
+Files are in Russian.
