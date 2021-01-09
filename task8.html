@@ -1,0 +1,135 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style>
+			input[type="submit"], [type="number"], [readonly] {
+				padding-left: 10px;
+				margin-left: 10px;
+			}			
+			.task {
+				margin: 20px;
+				font-size: 20px;
+				font-weight: bold;
+			}				
+		</style>
+	</head>	
+	<body>
+		<div class="task">Задание 1
+			<!-->Пусть в html есть три кнопки, заданные через тег <input> Необходимо
+			сделать, чтобы при клике на первую – выводилось некоторое число, при двойном
+			клике – квадрат числа, при клике на вторую – квадрат этого числа, при двойном
+			клике – куб числа, при клике на третью – куб данного числа, при двойном клике
+			– число, возведенное в 4-ю степень. 
+			--> 
+			<input id="b1" type="submit" value="">
+			<input id="b2" type="submit" value="">
+			<input id="b3" type="submit" value="">
+			<script>
+				let b1 = document.querySelector('#b1');
+				let b2 = document.querySelector('#b2');
+				let b3 = document.querySelector('#b3');
+				let num = 3;
+				b1.addEventListener('click', function() {
+					b1.value = num;
+				});
+				b1.addEventListener('dblclick', function() {
+					b1.value = num * num;
+				});
+				b2.addEventListener('click', function() {
+					b2.value = num * num;
+				});
+				b2.addEventListener('dblclick', function() {
+					b2.value = num * num * num;
+				});
+				b3.addEventListener('click', function() {
+					b3.value = num * num * num;
+				});
+				b3.addEventListener('dblclick', function() {
+					b3.value = num * num * num * num;
+				})				
+			</script>
+		</div>	
+		<div class="task">Задание 2
+			<!-->Пусть имеется две картинки. Необходимо добавить на странице тег img и две
+			кнопки. По клику на первую кнопку необходимо записать в атрибут src путь к
+			первой картинке, а по клику на вторую - путь ко второй картинке. 
+			--> 
+			<img id="img1"><input id="button1" type="submit" value="">
+			<img id="img2"><input id="button2" type="submit" value="">
+			<script>
+				let img1 = document.querySelector('#img1');
+				let img2 = document.querySelector('#img2');
+				let button1 = document.querySelector('#button1');
+				let button2 = document.querySelector('#button2');
+				button1.addEventListener('click', function() {
+					img1.src = 'IMG/IMG_6337.jpg';
+				});
+				button1.addEventListener('dblclick', function() {
+					img1.src = '';
+				});
+				button2.addEventListener('click', function() {
+					img1.src = 'IMG/IMG_6349.jpg';
+				});
+				button2.addEventListener('dblclick', function() {
+					img1.src = '';
+				})				
+			</script>
+		</div> 
+		<div class="task">Задание 3
+			<!-->На странице присутствуют 5 полей ввода (input), абзац и кнопка. В поле
+			ввода заносятся числа. По клику на кнопку запишите среднее введенных чисел в
+			абзац.
+			--> 
+			<input id="numtype1" type="number" value="0">
+			<input id="numtype2" type="number" value="0">
+			<input id="numtype3" type="number" value="0">
+			<input id="numtype4" type="number" value="0">
+			<input id="numtype5" type="number" value="0">
+			<input id="button" type="submit" value="">
+			<p id="numtext"></p>
+			<script>
+				let numtype1 = document.querySelector('#numtype1');
+				let numtype2 = document.querySelector('#numtype2');
+				let numtype3 = document.querySelector('#numtype3');
+				let numtype4 = document.querySelector('#numtype4');
+				let numtype5 = document.querySelector('#numtype5');
+				let button = document.querySelector('#button');
+				let numtext = document.querySelector('#numtext');
+				button.addEventListener('click', function() {
+					numtext.innerHTML = (Number(numtype1.value) + Number(numtype2.value)
+			   		+ Number(numtype3.value) + Number(numtype4.value)
+			   		+ Number(numtype5.value)) / 5;
+				})				
+			</script>
+		</div>
+		<div class="task">Задание 4
+			<!-->На странице существуют 3 поля ввода, в которых записаны какие-то числа.
+			По потери фокуса в любом из полей ввода возведите стоящее в нем число в
+			квадрат. 
+			--> 
+			<input class="numsq" readonly value="6">
+			<input class="numsq" readonly value="7">
+			<input class="numsq" readonly value="14">
+			<script>
+				let numsq = document.querySelectorAll('.numsq');
+				for (let nums of numsq) {
+   					nums.addEventListener('blur', function() {
+     					nums.value *= nums.value;
+   				})}
+		</script>
+		</div>
+		<div class="task">Задание 5</div>
+		<div id="text">Здесь есть какой-то текст, который вроде бы о чём-то, но на самом
+		деле ни о чём.
+			<input id="buttontext" type="submit" value="">		
+		</div>
+		<script>
+			let text = document.querySelector('#text');
+			let buttontext = document.querySelector('#buttontext');
+			buttontext.addEventListener('click', function() {
+				text.style.backgroundColor = 'red';
+				text.style.fontSize = text.style.marginTop = '20px';
+			});			
+		</script>
+	</body>	
+</html>
